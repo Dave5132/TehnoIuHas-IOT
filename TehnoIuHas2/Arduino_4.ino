@@ -1,32 +1,32 @@
 //Panels control
-#define LDR_PIN A1
+#define LDR_PIN A0
 #include <LedControl.h>
-#define DIN_1  12
-#define CS_1  11
-#define CLK_1  10
-#define DIN_2  12
-#define CS_2  11
-#define CLK_2  10
+#define DIN_1  0
+#define CS_1  1
+#define CLK_1  2
+#define DIN_2  3
+#define CS_2  4
+#define CLK_2  5
 byte night[8] =     {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 byte morning[8] =     {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,};
 byte test[8] = {0x18, 0x3C, 0x18, 0x18, 0x18, 0x18, 0x7E, 0x7E};
 LedControl lc_1 = LedControl(DIN_1, CLK_1, CS_1, 0);
 LedControl lc_2 = LedControl(DIN_2, CLK_2, CS_2, 0);
 char reader;
-#define samp_siz 4
-#define rise_threshold 5
-int sensorPin = 0;
+#define samp_siz 6
+#define rise_threshold 7
+int sensorPin = 8;
 //Buzzer sensor
 const int buzzer = 9;
-const int buzzer_1 = 9;
-const int buzzer_2 = 9;
-const int buzzer_3 = 9;
+const int buzzer_1 = 10;
+const int buzzer_2 = 11;
+const int buzzer_3 = 12;
 //Flame sensor
-int FLAME = A0;
+int FLAME = A1;
 //Leds
-int led1 = 13 , led2 = 15;
+int led1 = 13 , led2 = 14;
 //light cup sensor
-int light_cup1 = 10, light_cup2 = 12;
+int light_cup1 = 15, light_cup2 = 16;
 //Val for light
 int val1, val2, plus = 1;
 //helper
