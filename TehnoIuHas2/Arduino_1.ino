@@ -1,50 +1,50 @@
 //RGB_LED//
-#define LED_RED 6
-#define LED_GREEN 5
-#define LED_BLUE 4
-#define LED1_RED 6
-#define LED1_GREEN 5
-#define LED1_BLUE 4
+#define LED_RED 0
+#define LED_GREEN 1
+#define LED_BLUE 2
+#define LED1_RED 3
+#define LED1_GREEN 4
+#define LED1_BLUE 5
 #define LED2_RED 6
-#define LED2_GREEN 5
-#define LED2_BLUE 4
-#define LED3_RED 6
-#define LED3_GREEN 5
-#define LED3_BLUE 4
-#define LED4_RED 6
-#define LED4_GREEN 5
-#define LED4_BLUE 4
-#define LED5_RED 6
-#define LED5_GREEN 5
-#define LED5_BLUE 4
-#define LED6_RED 6
-#define LED6_GREEN 5
-#define LED6_BLUE 4
-#define LED7_RED 6
-#define LED7_GREEN 5
-#define LED7_BLUE 4
-#define LED8_RED 6
-#define LED8_GREEN 5
-#define LED8_BLUE 4
-#define LED9_RED 6
-#define LED9_GREEN 5
-#define LED9_BLUE 4
-#define LED10_RED 6
-#define LED10_GREEN 5
-#define LED10_BLUE 4
-#define LED11_RED 6
-#define LED11_GREEN 5
-#define LED11_BLUE 4
-#define LED12_RED 6
-#define LED12_GREEN 5
-#define LED12_BLUE 4
-#define LED13_RED 6
-#define LED13_GREEN 5
-#define LED13_BLUE 4
+#define LED2_GREEN 7
+#define LED2_BLUE 8
+#define LED3_RED 9
+#define LED3_GREEN 10
+#define LED3_BLUE 11
+#define LED4_RED 12
+#define LED4_GREEN 13
+#define LED4_BLUE 14
+#define LED5_RED 15
+#define LED5_GREEN 16
+#define LED5_BLUE 17
+#define LED6_RED 18
+#define LED6_GREEN 19
+#define LED6_BLUE 20
+#define LED7_RED 21
+#define LED7_GREEN 22
+#define LED7_BLUE 23
+#define LED8_RED 24
+#define LED8_GREEN 25
+#define LED8_BLUE 26
+#define LED9_RED 27
+#define LED9_GREEN 28
+#define LED9_BLUE 29
+#define LED10_RED 30
+#define LED10_GREEN 31
+#define LED10_BLUE 32
+#define LED11_RED 33
+#define LED11_GREEN 34
+#define LED11_BLUE 35
+#define LED12_RED 36
+#define LED12_GREEN 37
+#define LED12_BLUE 38
+#define LED13_RED 39
+#define LED13_GREEN 40
+#define LED13_BLUE 41
 //led
-#define LED 5
+#define LED 42
 //JoyStick//
-#define SW 5
+#define SW 43
 int VRx = A0;
 int VRy = A1;
 const int redX = 512;
@@ -60,14 +60,14 @@ int potPin = 2;
 int val = 0;
 //PIR MOTION SENSOR//
 int led_1 = 1, led_2 = 1, led_3 = 1, led_4 = 1, led_5 = 1, led_6 = 1, led_7 = 1, led_8 = 1;
-#define PIR_OUTF A0
-#define PIR_IN A1
-#define PIR_OUTB A2
+#define PIR_OUTF A3
+#define PIR_IN A4
+#define PIR_OUTB A5
 //LDR_PIN//
-#define LDR_IN A3
-#define LDR_OUT A4
+#define LDR_IN A6
+#define LDR_OUT A7
 //MICROFONE//
-#define Micro 4// millis
+#define Micro 44// millis
 //Millis for senzor
 unsigned long lastMillis1;
 unsigned long lastMillis2;
