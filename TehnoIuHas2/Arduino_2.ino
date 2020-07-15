@@ -14,8 +14,8 @@ char keyMap_F [rows_F] [cols_F] = {
   {'7', '8', '9', 'C'},
   {'*', '0', '#', 'D'}
 };
-byte rowPins_F[rows_F] = {10, 9, 8, 7};
-byte colPins_F[cols_F] = {6, 5, 4, 3};
+byte rowPins_F[rows_F] = {7, 6, 5, 4};
+byte colPins_F[cols_F] = {3, 2, 1, 0};
 Keypad myKeypad_F = Keypad( makeKeymap(keyMap_F), rowPins_F, colPins_F, rows_F, cols_F);
 //KeyPad_Back//
 const byte rows_B = 4;
@@ -26,8 +26,8 @@ char keyMap_B [rows_B] [cols_B] = {
   {'7', '8', '9', 'C'},
   {'*', '0', '#', 'D'}
 };
-byte rowPins_B[rows_B] = {10, 9, 8, 7};
-byte colPins_B[cols_B] = {6, 5, 4, 3};
+byte rowPins_B[rows_B] = {15, 14, 13, 12};
+byte colPins_B[cols_B] = {11, 10, 9, 8};
 Keypad myKeypad_B = Keypad( makeKeymap(keyMap_B), rowPins_B, colPins_B, rows_B, cols_B);
 //Servo//
 Servo Servo_OUTF, Servo_OUTB_L, Servo_OUTB_R, Servo_IN;
@@ -35,14 +35,14 @@ Servo Servo_OUTF, Servo_OUTB_L, Servo_OUTB_R, Servo_IN;
 LiquidCrystal lcd_B (A0, A1, A2, A3, A4, A5);
 LiquidCrystal lcd_F (A6, A7, A8, A9, A10, A11);
 //Fan//
-#define fan1 5
-#define fan2 4
-#define fan3 6
+#define fan1 16
+#define fan2 17
+#define fan3 18
 //Temperature and Humidity//
-#define dht_apin A11
-#define dht_bpin A12
-#define dht_cpin A13
-#define dht_dpin A14
+#define dht_apin A12
+#define dht_bpin A13
+#define dht_cpin A14
+#define dht_dpin A15
 dht11 DHT11, DHT22, DHT33, DHT44;
 //Read from wer
 char reader;
@@ -51,7 +51,7 @@ int interval, time_b;
 //Door and fan control
 int door_1 = 1, door_2 = 1, door_3 = 1, door_4 = 1, fan_1 = 1, fan_2 = 1, fan_3 = 1, auto_1 = 1;
 //Touch senzor
-#define touchPIN 3
+#define touchPIN 19
 //Millis
 unsigned long lastMillis1;
 unsigned long lastMillis2;
