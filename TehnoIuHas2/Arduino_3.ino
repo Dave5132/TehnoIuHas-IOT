@@ -4,46 +4,46 @@ const int stepsPerRevolution = 2048;
 int x = 1, a = 0, b = 0, y = 0, active = 0, something = 0;
 char comands, number;
 
-Stepper myStepper1 = Stepper(stepsPerRevolution, 4, 6, 5, 7);
-Stepper myStepper2 = Stepper(stepsPerRevolution, 6, 5, 12, 15);
+Stepper myStepper1 = Stepper(stepsPerRevolution, 0, 1, 2,3);
+Stepper myStepper2 = Stepper(stepsPerRevolution, 4, 5, 6, 7);
 //Laser and resistor
-#define laser_out 19
-#define laser_in 2
-#define resistor_out 14
-#define resistor_in 53
+#define laser_out 8
+#define laser_in 9
+#define resistor_out 10
+#define resistor_in 11
 //Button
-#define button 13
+#define button 12
 //Ultrasonic
-#define echo_r 10
-#define trig_r 9
-#define echo_l 12
-#define trig_l 11
+#define echo_r 13
+#define trig_r 14
+#define echo_l 15
+#define trig_l 16
 float ultra_r, ultra_l;
 //Led
-#define RED 6
-#define BLUE 7
-#define GREEN 8
+#define RED 17
+#define BLUE 18
+#define GREEN 19
 //Remote
 #include <IRremote.h>
 #define button_1 0x490
 #define button_2 0x40
-int RECV_PIN = 7;
+int RECV_PIN = 20;
 IRrecv irrecv(RECV_PIN);
 decode_results results;
 //Buzzer
-const int buzzer = 4;
+const int buzzer = 21;
 //4 pe 7
-#define pinA  2
-#define pinB  3
-#define pinC  4
-#define pinD  5
-#define pinE  6
-#define pinF  7
-#define pinG  8
-#define D1  9
-#define D2 10
-#define D3 11
-#define D4  12
+#define pinA  22
+#define pinB  23
+#define pinC  24
+#define pinD  25
+#define pinE  26
+#define pinF  27
+#define pinG  28
+#define D1  29
+#define D2 30
+#define D3 31
+#define D4  32
 //Sensor helpers
 boolean freeze = false;
 unsigned long lastMillis1;
@@ -190,12 +190,12 @@ void loop() {
     else {
       RGB_LED(255, 255, 255);
     }
-    //    if (ultra_r < ultra_l) {
-    //      number = ultra_r / 10;
-    //    }
-    //    else {
-    //      number = ultra_l / 10;
-    //    }
+        if (ultra_r < ultra_l) {
+          number = ultra_r / 10;
+        }
+        else {
+          number = ultra_l / 10;
+        }
   }
   else {
     digitalWrite(laser_out, LOW);
@@ -204,112 +204,112 @@ void loop() {
   }
 
   //Print all numbers for panel
-  //  switch (number) {
-  //    case '0':
-  //      digitalWrite(pinA, LOW);
-  //      digitalWrite(pinB, LOW);
-  //      digitalWrite(pinC, LOW);
-  //      digitalWrite(pinD, LOW);
-  //      digitalWrite(pinE, LOW);
-  //      digitalWrite(pinF, LOW);
-  //      digitalWrite(pinG, LOW);
-  //      digitalWrite(D1, LOW);
-  //      digitalWrite(D2, LOW);
-  //      digitalWrite(D3, LOW);
-  //      digitalWrite(D4, LOW);
-  //      break;
-  //    case'1':
-  //      digitalWrite(pinA, LOW);
-  //      digitalWrite(pinB, LOW);
-  //      digitalWrite(pinC, LOW);
-  //      digitalWrite(pinD, HIGH);
-  //      digitalWrite(pinE, LOW);
-  //      digitalWrite(pinF, LOW);
-  //      digitalWrite(pinG, LOW);
-  //      digitalWrite(D1, LOW);
-  //      digitalWrite(D2, LOW);
-  //      digitalWrite(D3, HIGH);
-  //      digitalWrite(D4, LOW);
-  //      break;
-  //    case'2':
-  //      digitalWrite(pinA, HIGH);
-  //      digitalWrite(pinB, HIGH);
-  //      digitalWrite(pinC, LOW);
-  //      digitalWrite(pinD, HIGH);
-  //      digitalWrite(pinE, LOW);
-  //      digitalWrite(pinF, HIGH);
-  //      digitalWrite(pinG, LOW);
-  //      digitalWrite(D1, LOW);
-  //      digitalWrite(D2, LOW);
-  //      digitalWrite(D3, LOW);
-  //      digitalWrite(D4, HIGH);
-  //      break;
-  //    case'3':
-  //      digitalWrite(pinA, LOW);
-  //      digitalWrite(pinB, HIGH);
-  //      digitalWrite(pinC, LOW);
-  //      digitalWrite(pinD, HIGH);
-  //      digitalWrite(pinE, LOW);
-  //      digitalWrite(pinF, LOW);
-  //      digitalWrite(pinG, HIGH);
-  //      break;
-  //    case'4':
-  //      digitalWrite(pinA, HIGH);
-  //      digitalWrite(pinB, LOW);
-  //      digitalWrite(pinC, LOW);
-  //      digitalWrite(pinD, HIGH);
-  //      digitalWrite(pinE, HIGH);
-  //      digitalWrite(pinF, LOW);
-  //      digitalWrite(pinG, LOW);
-  //      break;
-  //    case'5':
-  //      digitalWrite(pinA, LOW);
-  //      digitalWrite(pinB, HIGH);
-  //      digitalWrite(pinC, LOW);
-  //      digitalWrite(pinD, LOW);
-  //      digitalWrite(pinE, HIGH);
-  //      digitalWrite(pinF, LOW);
-  //      digitalWrite(pinG, LOW);
-  //      break;
-  //    case'6':
-  //
-  //      //6
-  //      digitalWrite(pinA, LOW);
-  //      digitalWrite(pinB, HIGH);
-  //      digitalWrite(pinC, LOW);
-  //      digitalWrite(pinD, LOW);
-  //      digitalWrite(pinE, LOW);
-  //      digitalWrite(pinF, LOW);
-  //      digitalWrite(pinG, LOW);
-  //      break;
-  //    case'7':
-  //      digitalWrite(pinA, LOW);
-  //      digitalWrite(pinB, LOW);
-  //      digitalWrite(pinC, LOW);
-  //      digitalWrite(pinD, HIGH);
-  //      digitalWrite(pinE, HIGH);
-  //      digitalWrite(pinF, HIGH);
-  //      digitalWrite(pinG, HIGH);
-  //      break;
-  //    case'8':
-  //      digitalWrite(pinA, LOW);
-  //      digitalWrite(pinB, LOW);
-  //      digitalWrite(pinC, LOW);
-  //      digitalWrite(pinD, LOW);
-  //      digitalWrite(pinE, LOW);
-  //      digitalWrite(pinF, LOW);
-  //      digitalWrite(pinG, LOW);
-  //      break;
-  //    case'9':
-  //      digitalWrite(pinA, LOW);
-  //      digitalWrite(pinB, LOW);
-  //      digitalWrite(pinC, LOW);
-  //      digitalWrite(pinD, HIGH);
-  //      digitalWrite(pinE, HIGH);
-  //      digitalWrite(pinF, LOW);
-  //      digitalWrite(pinG, LOW);
-  //      break;
-  //  }
+    switch (number) {
+      case '0':
+        digitalWrite(pinA, LOW);
+        digitalWrite(pinB, LOW);
+        digitalWrite(pinC, LOW);
+        digitalWrite(pinD, LOW);
+        digitalWrite(pinE, LOW);
+        digitalWrite(pinF, LOW);
+        digitalWrite(pinG, LOW);
+        digitalWrite(D1, LOW);
+        digitalWrite(D2, LOW);
+        digitalWrite(D3, LOW);
+        digitalWrite(D4, LOW);
+        break;
+      case'1':
+        digitalWrite(pinA, LOW);
+        digitalWrite(pinB, LOW);
+        digitalWrite(pinC, LOW);
+        digitalWrite(pinD, HIGH);
+        digitalWrite(pinE, LOW);
+        digitalWrite(pinF, LOW);
+        digitalWrite(pinG, LOW);
+        digitalWrite(D1, LOW);
+        digitalWrite(D2, LOW);
+        digitalWrite(D3, HIGH);
+        digitalWrite(D4, LOW);
+        break;
+      case'2':
+        digitalWrite(pinA, HIGH);
+        digitalWrite(pinB, HIGH);
+        digitalWrite(pinC, LOW);
+        digitalWrite(pinD, HIGH);
+        digitalWrite(pinE, LOW);
+        digitalWrite(pinF, HIGH);
+        digitalWrite(pinG, LOW);
+        digitalWrite(D1, LOW);
+        digitalWrite(D2, LOW);
+        digitalWrite(D3, LOW);
+        digitalWrite(D4, HIGH);
+        break;
+      case'3':
+        digitalWrite(pinA, LOW);
+        digitalWrite(pinB, HIGH);
+        digitalWrite(pinC, LOW);
+        digitalWrite(pinD, HIGH);
+        digitalWrite(pinE, LOW);
+        digitalWrite(pinF, LOW);
+        digitalWrite(pinG, HIGH);
+        break;
+      case'4':
+        digitalWrite(pinA, HIGH);
+        digitalWrite(pinB, LOW);
+        digitalWrite(pinC, LOW);
+        digitalWrite(pinD, HIGH);
+        digitalWrite(pinE, HIGH);
+        digitalWrite(pinF, LOW);
+        digitalWrite(pinG, LOW);
+        break;
+      case'5':
+        digitalWrite(pinA, LOW);
+        digitalWrite(pinB, HIGH);
+        digitalWrite(pinC, LOW);
+        digitalWrite(pinD, LOW);
+        digitalWrite(pinE, HIGH);
+        digitalWrite(pinF, LOW);
+        digitalWrite(pinG, LOW);
+        break;
+      case'6':
+  
+        //6
+        digitalWrite(pinA, LOW);
+        digitalWrite(pinB, HIGH);
+        digitalWrite(pinC, LOW);
+        digitalWrite(pinD, LOW);
+        digitalWrite(pinE, LOW);
+        digitalWrite(pinF, LOW);
+        digitalWrite(pinG, LOW);
+        break;
+      case'7':
+        digitalWrite(pinA, LOW);
+        digitalWrite(pinB, LOW);
+        digitalWrite(pinC, LOW);
+        digitalWrite(pinD, HIGH);
+        digitalWrite(pinE, HIGH);
+        digitalWrite(pinF, HIGH);
+        digitalWrite(pinG, HIGH);
+        break;
+      case'8':
+        digitalWrite(pinA, LOW);
+        digitalWrite(pinB, LOW);
+        digitalWrite(pinC, LOW);
+        digitalWrite(pinD, LOW);
+        digitalWrite(pinE, LOW);
+        digitalWrite(pinF, LOW);
+        digitalWrite(pinG, LOW);
+        break;
+      case'9':
+        digitalWrite(pinA, LOW);
+        digitalWrite(pinB, LOW);
+        digitalWrite(pinC, LOW);
+        digitalWrite(pinD, HIGH);
+        digitalWrite(pinE, HIGH);
+        digitalWrite(pinF, LOW);
+        digitalWrite(pinG, LOW);
+        break;
+    }
 
 }
 float Ultrasonic(int trigPin, int echoPin) {
