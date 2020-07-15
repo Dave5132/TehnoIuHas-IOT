@@ -1,1 +1,14 @@
-# TehnoIuHas-IOT
+# TehnoIuHas1 
+1.Basoc Cristi
+2.Calaev Vitalic
+3.Graur Elena
+4.Balamatiuc Eduard
+2.Lupei Marius
+# TehnoIuHas2
+1.Moglan Viorica
+2.Moglan Nikita
+3.Basoc Damian
+4.Spinenco Vlad
+1.Tiganciuc Liviu
+3.Catalin Crecu
+4.Minchevici Lucian
